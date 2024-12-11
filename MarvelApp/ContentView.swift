@@ -8,17 +8,22 @@
 import SwiftUI
 
 struct ContentView: View {
-    var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+    
+    private let network: NetworkHerosProtocol
+    init(network: NetworkHerosProtocol = NetworkHeros()) {
+        self.network = network
+        Task {
+            await network.fetchHeros()
         }
-        .padding()
+    }
+    
+    var body: some View {
+        Text("Hola, Mundo!")
     }
 }
 
 #Preview {
     ContentView()
+        .preferredColorScheme(.light)
+        .environment(\.locale, .init(identifier: "es"))
 }
