@@ -9,9 +9,13 @@ import SwiftUI
 
 @main
 struct MarvelAppApp: App {
+    
+    @State var appState = AppStateVM() // ViewModel global
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            RootView()
+                .environment(appState)
         }
     }
 }

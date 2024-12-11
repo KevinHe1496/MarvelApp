@@ -9,10 +9,23 @@ import SwiftUI
 
 struct HeroListView: View {
     
-    
+    @Environment(AppStateVM.self) var appState
     
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack {
+            Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+            Button {
+                appState.getHeros()
+            } label: {
+                Text("Click")
+                    
+                    .frame(width: 200, height: 50)
+                    .background(Color.blue)
+                    .clipShape(RoundedRectangle(cornerRadius: 20))
+                    .foregroundStyle(.white)
+            }
+
+        }
     }
 }
 
@@ -20,4 +33,5 @@ struct HeroListView: View {
     HeroListView()
         .preferredColorScheme(.light)
         .environment(\.locale, .init(identifier: "es"))
+        .environment(AppStateVM())
 }

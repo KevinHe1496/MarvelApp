@@ -15,7 +15,7 @@ struct HeroResult: Codable {
     let results: [HerosRes]
 }
 
-struct HerosRes: Codable, Identifiable {
+struct HerosRes: Codable, Identifiable, Equatable {
     let name: String
     let id: Int
 }

@@ -8,13 +8,25 @@
 import SwiftUI
 
 struct SplashView: View {
+    
+    @Environment(AppStateVM.self) var appState
+    
     var body: some View {
-        Image(.splashBackground)
-            .resizable()
-            .ignoresSafeArea()
+        ZStack{
+            Image(.splashBackground)
+                .resizable()
+                .ignoresSafeArea()
+            ProgressView()
+                .progressViewStyle(CircularProgressViewStyle(tint: .white))
+                .scaleEffect(1.5)
+        }
+        .onAppear{
+            appState.startSplashToHerosList()
+        }
     }
 }
 
 #Preview {
     SplashView()
+        .environment(AppStateVM())
 }
