@@ -38,3 +38,16 @@ final class NetworkHeros: NetworkHerosProtocol {
     }
 
 }
+
+final class NetworkHerosMock: NetworkHerosProtocol {
+    func fetchHeros() async -> [HerosRes] {
+        
+        let model1 = HerosRes(name: "Lintera Verde", id: 1)
+        let model2 = HerosRes(name: "DeadPool", id: 2)
+        let model3 = HerosRes(name: "Wolverin", id: 3)
+        
+        return [model1, model2, model3]
+    }
+    
+    
+}
