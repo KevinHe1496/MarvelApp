@@ -13,6 +13,7 @@ import Combine
 final class HerosViewModel: ObservableObject {
     
     var herosData = [HerosRes]()
+    var searchText = ""
     
     @ObservationIgnored
     private var useCaseHeros: HerosUseCaseProtocol
@@ -25,6 +26,18 @@ final class HerosViewModel: ObservableObject {
         }
     }
     
+    // Filtrar Heroes
+    var filteredCharacters: [HerosRes] {
+        if searchText.isEmpty {
+            return herosData
+        } else {
+            return herosData.filter { hero in
+                hero.name.lowercased().contains(searchText.lowercased())
+            }
+        }
+    }
+    
+    // Obtener Heroes
     @MainActor
     func getHeros() async {
         let data = await useCaseHeros.fetchHeros()

@@ -9,33 +9,30 @@ import SwiftUI
 
 struct HeroListView: View {
     
-    @State var viewModel: HerosViewModel
-    @State private var filter: String = ""
+    @StateObject var viewModel: HerosViewModel
+    
     let columns = Array(repeating: GridItem(.flexible(minimum: 100)), count: 2)
     
     init(viewModel: HerosViewModel = HerosViewModel()) {
-        self.viewModel = viewModel
+        _viewModel = StateObject(wrappedValue: viewModel)
     }
     
     var body: some View {
         NavigationStack {
             ScrollView {
                 LazyVGrid(columns: columns) {
-                    ForEach(viewModel.herosData) { hero in
+                    ForEach(viewModel.filteredCharacters) { hero in
                         NavigationLink {
                             Text("Destino: \(hero.name)")
                         } label: {
                             HerosRowView(hero: hero)
                         }
-      
                     }
                 }
-            } // fin scroll view
-
+            }
             .navigationTitle("Lista de Heroes")
-            .searchable(text: $filter)
-        } // fin navigationstack
-        
+            .searchable(text: $viewModel.searchText)
+        }
     }
 }
 
@@ -43,5 +40,5 @@ struct HeroListView: View {
     HeroListView(viewModel: HerosViewModel(useCaseHeros: HerosUseCaseMock()))
         .preferredColorScheme(.light)
         .environment(\.locale, .init(identifier: "es"))
-    
 }
+
