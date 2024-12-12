@@ -27,7 +27,7 @@ final class NetworkHeros: NetworkHerosProtocol {
             let (data, response) = try await URLSession.shared.data(for: request)
             if let httpRes = response as? HTTPURLResponse {
                 if httpRes.statusCode == HttpResponseCodes.SUCCESS {
-                    let dataHeros = try! JSONDecoder().decode(HerosModel.self, from: data)
+                    let dataHeros = try JSONDecoder().decode(HerosModel.self, from: data)
                     modelReturn = dataHeros.data.results
                 }
             }
@@ -42,9 +42,9 @@ final class NetworkHeros: NetworkHerosProtocol {
 final class NetworkHerosMock: NetworkHerosProtocol {
     func fetchHeros() async -> [HerosRes] {
         
-        let model1 = HerosRes(name: "Lintera Verde", id: 1)
-        let model2 = HerosRes(name: "DeadPool", id: 2)
-        let model3 = HerosRes(name: "Wolverin", id: 3)
+        let model1 = HerosRes(name: "Lintera Verde", id: 1, thumbnail: Thumbnail(path: "", thumbnailExtension: Extension.jpg))
+        let model2 = HerosRes(name: "DeadPool", id: 2, thumbnail: Thumbnail(path: "", thumbnailExtension: Extension.jpg))
+        let model3 = HerosRes(name: "Wolverin", id: 3, thumbnail: Thumbnail(path: "", thumbnailExtension: Extension.jpg))
         
         return [model1, model2, model3]
     }

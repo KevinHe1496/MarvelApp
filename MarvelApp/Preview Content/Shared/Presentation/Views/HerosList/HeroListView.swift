@@ -9,29 +9,37 @@ import SwiftUI
 
 struct HeroListView: View {
     
-    @Environment(AppStateVM.self) var appState
+    @State var viewModel: HerosViewModel
+    @State private var filter: String = ""
+    
+    init(viewModel: HerosViewModel = HerosViewModel()) {
+        self.viewModel = viewModel
+    }
     
     var body: some View {
-        VStack {
-            Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-            Button {
-                appState.getHeros()
-            } label: {
-                Text("Click")
+        NavigationStack {
+            List {
+                ForEach(viewModel.herosData){ hero in
+                    NavigationLink {
+                        // Destination
+                        Text("Destino: \(hero.name)")
+                    } label: {
+                        // Label
+                        HeroRowView(hero: hero)
+                    }
                     
-                    .frame(width: 200, height: 50)
-                    .background(Color.blue)
-                    .clipShape(RoundedRectangle(cornerRadius: 20))
-                    .foregroundStyle(.white)
-            }
-
-        }
+                }
+            } // fin list
+            .navigationTitle("Lista de Heroes")
+            .searchable(text: $filter)
+        } // fin navigationstack
+        
     }
 }
 
 #Preview {
-    HeroListView()
+    HeroListView(viewModel: HerosViewModel(useCaseHeros: HerosUseCaseMock()))
         .preferredColorScheme(.light)
         .environment(\.locale, .init(identifier: "es"))
-        .environment(AppStateVM())
+    
 }
