@@ -11,6 +11,7 @@ struct HeroListView: View {
     
     @State var viewModel: HerosViewModel
     @State private var filter: String = ""
+    let columns = Array(repeating: GridItem(.flexible(minimum: 100)), count: 2)
     
     init(viewModel: HerosViewModel = HerosViewModel()) {
         self.viewModel = viewModel
@@ -18,18 +19,19 @@ struct HeroListView: View {
     
     var body: some View {
         NavigationStack {
-            List {
-                ForEach(viewModel.herosData){ hero in
-                    NavigationLink {
-                        // Destination
-                        Text("Destino: \(hero.name)")
-                    } label: {
-                        // Label
-                        HeroRowView(hero: hero)
+            ScrollView {
+                LazyVGrid(columns: columns) {
+                    ForEach(viewModel.herosData) { hero in
+                        NavigationLink {
+                            Text("Destino: \(hero.name)")
+                        } label: {
+                            HerosRowView(hero: hero)
+                        }
+      
                     }
-                    
                 }
-            } // fin list
+            } // fin scroll view
+
             .navigationTitle("Lista de Heroes")
             .searchable(text: $filter)
         } // fin navigationstack
