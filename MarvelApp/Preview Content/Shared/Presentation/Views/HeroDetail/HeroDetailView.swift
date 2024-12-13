@@ -9,13 +9,13 @@ import SwiftUI
 
 struct HeroDetailView: View {
     
-    let hero: HerosRes
-    
-    let viewModel: SeriesViewModel
+    @State var hero: HerosRes
+    @State var viewModel: SeriesViewModel
     
     init(viewModel: SeriesViewModel = SeriesViewModel(), hero: HerosRes) {
         self.viewModel = viewModel
         self.hero = hero
+        
         Task {
             await viewModel.getSeries(id: hero.id)
         }
@@ -34,7 +34,5 @@ struct HeroDetailView: View {
 }
 
 #Preview {
-    HeroDetailView(hero: HerosRes(name: "Linterna Verde", id: 1, thumbnail: Thumbnail(path: "http://i.annihil.us/u/prod/marvel/i/mg/c/e0/535fecbbb9784", thumbnailExtension: Extension.jpg), series: SeriesData(items: [ItemsData(resourceURI: "", name: "Carlos"),
-                                                                                                                                                                                                                        ItemsData(resourceURI: "", name: "Andy"),
-                                                                                                                                                                                                                        ItemsData(resourceURI: "", name: "Kevin")])))
+    HeroDetailView(hero: HerosRes(name: "Linterna Verde", id: 1, thumbnail: Thumbnail(path: "http://i.annihil.us/u/prod/marvel/i/mg/c/e0/535fecbbb9784", thumbnailExtension: Extension.jpg)))
 }
