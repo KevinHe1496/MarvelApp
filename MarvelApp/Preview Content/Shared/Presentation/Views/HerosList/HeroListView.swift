@@ -9,12 +9,12 @@ import SwiftUI
 
 struct HeroListView: View {
     
-    @StateObject var viewModel: HerosViewModel
+    @State var viewModel: HerosViewModel
     
-    let columns = Array(repeating: GridItem(.flexible(minimum: 100)), count: 2)
+    let columns = Array(repeating: GridItem(.flexible(minimum: 20)), count: 2)
     
     init(viewModel: HerosViewModel = HerosViewModel()) {
-        _viewModel = StateObject(wrappedValue: viewModel)
+        self.viewModel = viewModel
     }
     
     var body: some View {
@@ -29,6 +29,7 @@ struct HeroListView: View {
                         }
                     }
                 }
+                .padding(.horizontal)
             }
             .navigationTitle("Lista de Heroes")
             .searchable(text: $viewModel.searchText)

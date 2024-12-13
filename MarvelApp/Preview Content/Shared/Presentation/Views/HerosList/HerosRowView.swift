@@ -14,6 +14,7 @@ struct HerosRowView: View {
     var body: some View {
         ZStack {
             
+            // Imagen
             AsyncImage(url: URL(string: "\(hero.thumbnail.path).\(hero.thumbnail.thumbnailExtension)")) { photo in
                 photo
                     .resizable()
@@ -26,7 +27,7 @@ struct HerosRowView: View {
                         
                     )
                     .aspectRatio(contentMode: .fill)
-                    .frame(width: 150, height: 150)
+                    .frame(width: 170, height: 250)
                     .clipShape(RoundedRectangle(cornerRadius: 20))
 //                    .shadow(radius: 7, x: 7,y: 7)
                     .padding()
@@ -35,18 +36,20 @@ struct HerosRowView: View {
             } placeholder: {
                 ProgressView()
                     .progressViewStyle(CircularProgressViewStyle(tint: .white))
-                    .aspectRatio(contentMode: .fit)
-                    .frame(width: 150, height: 150)
+                    .aspectRatio(contentMode: .fill)
+                    .frame(width: 170, height: 250)
                     .background(.gray)
                     .clipShape(RoundedRectangle(cornerRadius: 20))
 //                    .shadow(radius: 7, x: 7,y: 7)
-                    .padding()
+                    
             }
+            
+            //Texto nombre
             
             Text(hero.name)
                 .bold()
                 .foregroundStyle(.white)
-                .padding(.top, 100)
+                .padding(.top, 190)
                 .padding(.horizontal)
         } // fin Hstack
         
