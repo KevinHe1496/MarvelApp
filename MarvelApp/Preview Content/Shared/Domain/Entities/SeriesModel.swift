@@ -38,6 +38,3 @@ enum ExtensionSeries: String, Codable {
     case jpg = "jpg"
 }
 
-public struct SerieModelRequest: Codable {
-    public let id: Int
-}
