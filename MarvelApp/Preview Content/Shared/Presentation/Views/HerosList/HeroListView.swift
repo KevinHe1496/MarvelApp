@@ -11,7 +11,7 @@ struct HeroListView: View {
     
     @State var viewModel: HerosViewModel
     
-    let columns = Array(repeating: GridItem(.flexible(minimum: 20)), count: 2)
+    let columns = Array(repeating: GridItem(.flexible(minimum: 20)), count: 1)
     
     init(viewModel: HerosViewModel = HerosViewModel()) {
         self.viewModel = viewModel

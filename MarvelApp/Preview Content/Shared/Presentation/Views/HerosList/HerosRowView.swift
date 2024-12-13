@@ -21,15 +21,15 @@ struct HerosRowView: View {
                     .overlay(
                         LinearGradient(gradient: Gradient(colors: [Color.black, Color.clear]), startPoint: .bottom, endPoint: .top
                                       )
-                        .frame(height: 80)
+                        .frame(height: 120)
                         .clipShape(RoundedRectangle(cornerRadius: 20)),
                         alignment: .bottom
                         
                     )
                     .aspectRatio(contentMode: .fill)
-                    .frame(width: 170, height: 250)
+                    .frame(width: 350, height: 250)
                     .clipShape(RoundedRectangle(cornerRadius: 20))
-//                    .shadow(radius: 7, x: 7,y: 7)
+                    .shadow(radius: 7, x: 7,y: 7)
                     .padding()
                     
                 
@@ -37,10 +37,10 @@ struct HerosRowView: View {
                 ProgressView()
                     .progressViewStyle(CircularProgressViewStyle(tint: .white))
                     .aspectRatio(contentMode: .fill)
-                    .frame(width: 170, height: 250)
+                    .frame(width: 350, height: 250)
                     .background(.gray)
                     .clipShape(RoundedRectangle(cornerRadius: 20))
-//                    .shadow(radius: 7, x: 7,y: 7)
+                    .shadow(radius: 7, x: 7,y: 7)
                     
             }
             
@@ -49,7 +49,7 @@ struct HerosRowView: View {
             Text(hero.name)
                 .bold()
                 .foregroundStyle(.white)
-                .padding(.top, 190)
+                .padding(.top, 210)
                 .padding(.horizontal)
         } // fin Hstack
         
