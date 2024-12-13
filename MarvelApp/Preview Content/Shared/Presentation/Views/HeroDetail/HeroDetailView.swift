@@ -31,6 +31,8 @@ struct HeroDetailView: View {
                 }
             }
         }
+        .navigationTitle("Series") 
+            
     }
 }
 

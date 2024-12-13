@@ -12,44 +12,55 @@ struct HeroDetailRowView: View {
     let serie: SeriesRus
     
     var body: some View {
-        ZStack {
-            VStack {
-                AsyncImage(url: URL(string: "\(serie.thumbnail.path).\(serie.thumbnail.thumbnailExtension)")) { photo in
-                    photo
-                        .resizable()
-                        .frame(width: 280, height: 200)
-                        .clipShape(RoundedRectangle(cornerRadius: 20))
-                        .aspectRatio(contentMode: .fill)
-                        .padding(.bottom, 30)
-                } placeholder: {
-                    ProgressView()
-                        .progressViewStyle(CircularProgressViewStyle(tint: .gray))
-                        .frame(width: 280, height: 200)
-                        .background(Color.white)
-                        .clipShape(RoundedRectangle(cornerRadius: 20))
-                        .padding(.bottom, 30)
+    
+      
+            ZStack {
+                VStack() {
+                    AsyncImage(url: URL(string: "\(serie.thumbnail.path).\(serie.thumbnail.thumbnailExtension)")) { photo in
+                        photo
+                            .resizable()
+                            .frame(height: 250)
+                            .frame(maxWidth: .infinity)
+                            .clipShape(RoundedRectangle(cornerRadius: 5))
+                            .aspectRatio(contentMode: .fill)
+                            .padding(.bottom, 30)
+                    } placeholder: {
+                        ProgressView()
+                            .progressViewStyle(CircularProgressViewStyle(tint: .white))
+                            .scaleEffect(1.5)
+                            .frame(height: 250)
+                            .frame(maxWidth: .infinity)
+                            .background(Color.gray)
+                            .clipShape(RoundedRectangle(cornerRadius: 5))
+                            .padding(.bottom, 30)
                         
-                }
-
-                Text(serie.title)
-                    .bold()
-                    .foregroundStyle(.white)
-                    .padding(.horizontal)
-                Text(serie.description ?? "No tiene descripción")
-                    .foregroundStyle(.white)
-                    .lineLimit(3)
-                    .padding(.horizontal)
+                    }
                     
-            }
-            .frame(width: 340, height: 400)
-            .background(Color.gray)
-            .clipShape(RoundedRectangle(cornerRadius: 20))
-            .shadow(radius: 7, x: 7, y: 7)
+                    
+                    Text(serie.title)
+                        .bold()
+                        .foregroundStyle(.black)
+                        .padding(.horizontal)
+                        .padding(.bottom, 10)
+                        .lineLimit(2)
+                    Text(serie.description ?? "No tiene descripción")
+                        .foregroundStyle(.black)
+                        .lineLimit(4)
+                        .padding(.horizontal)
+                    Spacer()
+                }
+                .frame(width: 340, height: 400)
+                .background(Color.white)
+                .clipShape(RoundedRectangle(cornerRadius: 5))
+                .shadow(radius: 7, x: 7, y: 7)
+                .padding(.bottom, 50)
+                
+                
+                
+                
+            } // fin zstack
             
-            
-            
-        }
-        
+ 
         
     }
 }
