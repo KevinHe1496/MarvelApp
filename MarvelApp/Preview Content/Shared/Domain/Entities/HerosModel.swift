@@ -19,6 +19,7 @@ struct HerosRes: Codable, Identifiable {
     let name: String
     let id: Int
     let thumbnail: Thumbnail
+    let series: SeriesData
 }
 
 struct Thumbnail: Codable {
@@ -34,4 +35,13 @@ struct Thumbnail: Codable {
 enum Extension: String, Codable {
     case gif = "gif"
     case jpg = "jpg"
+}
+
+struct SeriesData: Codable {
+    let items: [ItemsData]
+}
+
+struct ItemsData: Codable, Hashable {
+    let resourceURI: String
+    let name: String
 }

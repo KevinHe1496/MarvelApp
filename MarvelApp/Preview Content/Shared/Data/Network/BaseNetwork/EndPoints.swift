@@ -10,4 +10,5 @@ import Foundation
 /// EndPoints Server side
 enum EndPoints: String {
     case heros = "/v1/public/characters"
+    case series = "/v1/public/characters/"
 }

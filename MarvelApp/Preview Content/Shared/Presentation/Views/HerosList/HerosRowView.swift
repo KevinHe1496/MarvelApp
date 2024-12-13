@@ -31,7 +31,7 @@ struct HerosRowView: View {
                     .clipShape(RoundedRectangle(cornerRadius: 20))
                     .shadow(radius: 7, x: 7,y: 7)
                     .padding()
-                    
+                
                 
             } placeholder: {
                 ProgressView()
@@ -41,7 +41,7 @@ struct HerosRowView: View {
                     .background(.gray)
                     .clipShape(RoundedRectangle(cornerRadius: 20))
                     .shadow(radius: 7, x: 7,y: 7)
-                    
+                
             }
             
             //Texto nombre
@@ -57,5 +57,7 @@ struct HerosRowView: View {
 }
 
 #Preview {
-    HerosRowView(hero: HerosRes(name: "Linterna Verde", id: 1, thumbnail: Thumbnail(path: "http://i.annihil.us/u/prod/marvel/i/mg/c/e0/535fecbbb9784", thumbnailExtension: Extension.jpg)))
+    HerosRowView(hero: HerosRes(name: "Linterna Verde", id: 1, thumbnail: Thumbnail(path: "http://i.annihil.us/u/prod/marvel/i/mg/c/e0/535fecbbb9784", thumbnailExtension: Extension.jpg), series: SeriesData(items: [ItemsData(resourceURI: "", name: "Carlos"),
+                                                                                                                                                                                                                      ItemsData(resourceURI: "", name: "Andy"),
+                                                                                                                                                                                                                      ItemsData(resourceURI: "", name: "Kevin")])))
 }
