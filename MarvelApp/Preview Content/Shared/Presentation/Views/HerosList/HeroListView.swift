@@ -24,7 +24,6 @@ struct HeroListView: View {
                     ForEach(viewModel.filteredCharacters) { hero in
                         NavigationLink {
                             HeroDetailView(hero: hero)
-//                            Text(hero.name)
                         } label: {
                             HerosRowView(hero: hero)
                         }

@@ -19,7 +19,7 @@ final class SeriesViewModel {
     
     init(useCase: SeriesUseCaseProtocol = SeriesUseCase()) {
         self.useCase = useCase
-     
+        
     }
     
     @MainActor

@@ -41,4 +41,6 @@ struct RootView: View {
 #Preview {
     RootView()
         .environment(AppStateVM())
+        .environment(\.locale, .init(identifier: "en"))
+        .preferredColorScheme(.light)
 }
