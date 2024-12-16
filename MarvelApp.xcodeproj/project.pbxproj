@@ -14,19 +14,11 @@
 			remoteGlobalIDString = C9AB859E2D07B0C40095BF2F;
 			remoteInfo = MarvelApp;
 		};
-		C9AB85BA2D07B0C50095BF2F /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = C9AB85972D07B0C40095BF2F /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = C9AB859E2D07B0C40095BF2F;
-			remoteInfo = MarvelApp;
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		C9AB859F2D07B0C40095BF2F /* MarvelApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MarvelApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9AB85AF2D07B0C50095BF2F /* MarvelAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MarvelAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		C9AB85B92D07B0C50095BF2F /* MarvelAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MarvelAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -53,11 +45,6 @@
 			path = MarvelAppTests;
 			sourceTree = "<group>";
 		};
-		C9AB85BC2D07B0C50095BF2F /* MarvelAppUITests */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = MarvelAppUITests;
-			sourceTree = "<group>";
-		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,13 +62,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		C9AB85B62D07B0C50095BF2F /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -90,7 +70,6 @@
 			children = (
 				C9AB85A12D07B0C40095BF2F /* MarvelApp */,
 				C9AB85B22D07B0C50095BF2F /* MarvelAppTests */,
-				C9AB85BC2D07B0C50095BF2F /* MarvelAppUITests */,
 				C9AB85A02D07B0C40095BF2F /* Products */,
 			);
 			sourceTree = "<group>";
@@ -100,7 +79,6 @@
 			children = (
 				C9AB859F2D07B0C40095BF2F /* MarvelApp.app */,
 				C9AB85AF2D07B0C50095BF2F /* MarvelAppTests.xctest */,
-				C9AB85B92D07B0C50095BF2F /* MarvelAppUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -153,29 +131,6 @@
 			productReference = C9AB85AF2D07B0C50095BF2F /* MarvelAppTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		C9AB85B82D07B0C50095BF2F /* MarvelAppUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = C9AB85C92D07B0C50095BF2F /* Build configuration list for PBXNativeTarget "MarvelAppUITests" */;
-			buildPhases = (
-				C9AB85B52D07B0C50095BF2F /* Sources */,
-				C9AB85B62D07B0C50095BF2F /* Frameworks */,
-				C9AB85B72D07B0C50095BF2F /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				C9AB85BB2D07B0C50095BF2F /* PBXTargetDependency */,
-			);
-			fileSystemSynchronizedGroups = (
-				C9AB85BC2D07B0C50095BF2F /* MarvelAppUITests */,
-			);
-			name = MarvelAppUITests;
-			packageProductDependencies = (
-			);
-			productName = MarvelAppUITests;
-			productReference = C9AB85B92D07B0C50095BF2F /* MarvelAppUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -190,10 +145,6 @@
 						CreatedOnToolsVersion = 16.1;
 					};
 					C9AB85AE2D07B0C50095BF2F = {
-						CreatedOnToolsVersion = 16.1;
-						TestTargetID = C9AB859E2D07B0C40095BF2F;
-					};
-					C9AB85B82D07B0C50095BF2F = {
 						CreatedOnToolsVersion = 16.1;
 						TestTargetID = C9AB859E2D07B0C40095BF2F;
 					};
@@ -216,7 +167,6 @@
 			targets = (
 				C9AB859E2D07B0C40095BF2F /* MarvelApp */,
 				C9AB85AE2D07B0C50095BF2F /* MarvelAppTests */,
-				C9AB85B82D07B0C50095BF2F /* MarvelAppUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -230,13 +180,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		C9AB85AD2D07B0C50095BF2F /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		C9AB85B72D07B0C50095BF2F /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -260,13 +203,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		C9AB85B52D07B0C50095BF2F /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -274,11 +210,6 @@
 			isa = PBXTargetDependency;
 			target = C9AB859E2D07B0C40095BF2F /* MarvelApp */;
 			targetProxy = C9AB85B02D07B0C50095BF2F /* PBXContainerItemProxy */;
-		};
-		C9AB85BB2D07B0C50095BF2F /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = C9AB859E2D07B0C40095BF2F /* MarvelApp */;
-			targetProxy = C9AB85BA2D07B0C50095BF2F /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -502,40 +433,6 @@
 			};
 			name = Release;
 		};
-		C9AB85CA2D07B0C50095BF2F /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = F7BUD43D47;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.kevinhe.MarvelAppUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = MarvelApp;
-			};
-			name = Debug;
-		};
-		C9AB85CB2D07B0C50095BF2F /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = F7BUD43D47;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.kevinhe.MarvelAppUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = MarvelApp;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -562,15 +459,6 @@
 			buildConfigurations = (
 				C9AB85C72D07B0C50095BF2F /* Debug */,
 				C9AB85C82D07B0C50095BF2F /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		C9AB85C92D07B0C50095BF2F /* Build configuration list for PBXNativeTarget "MarvelAppUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				C9AB85CA2D07B0C50095BF2F /* Debug */,
-				C9AB85CB2D07B0C50095BF2F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
