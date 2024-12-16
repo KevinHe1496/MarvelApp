@@ -42,7 +42,7 @@ final class NetworkSeries: NetworkSeriesProtocol {
 }
 
 
-
+// MOCK
 final class NetworkSeriesMock: NetworkSeriesProtocol {
     func fetchSeries(id: Int) async -> [SeriesRus] {
         

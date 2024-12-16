@@ -14,7 +14,7 @@ public struct ConstantsApp {
     // Hash
     public static let CONS_HASH = "?hash=e5645a37500147be54b7fcdf27fced2d"
     
-    //Ts
+    // Ts
     public static let CONS_TS = "&ts=1"
     
     //Public Key

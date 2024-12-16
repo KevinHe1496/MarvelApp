@@ -35,8 +35,9 @@ final class AppStateVM {
         }
     }
     
+    // Empezar el splash screen despues de dos segundos aparezca el Heros List
     func startSplashToHerosList() {
-        status = .none // Cambiar a estado de carga
+        status = .none
 
          DispatchQueue.global().asyncAfter(deadline: .now() + 2) {
              DispatchQueue.main.async {

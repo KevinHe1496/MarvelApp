@@ -16,6 +16,7 @@ struct HeroDetailRowView: View {
       
             ZStack {
                 VStack() {
+                    // Imagen
                     AsyncImage(url: URL(string: "\(serie.thumbnail.path).\(serie.thumbnail.thumbnailExtension)")) { photo in
                         photo
                             .resizable()
@@ -36,7 +37,7 @@ struct HeroDetailRowView: View {
                         
                     }
                     
-                    
+                    // Titulo y descripción
                     Text(serie.title)
                         .bold()
                         .foregroundStyle(.black)

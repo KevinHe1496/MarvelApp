@@ -22,6 +22,7 @@ final class SeriesViewModel {
         
     }
     
+    // Obtener Series mediante el id
     @MainActor
     func getSeries(id: Int) async {
         let data = await useCase.fetchSeries(id: id)

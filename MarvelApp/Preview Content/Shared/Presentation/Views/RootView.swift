@@ -14,21 +14,22 @@ struct RootView: View {
     var body: some View {
         switch appState.status {
             
+            // Splash Screen
         case .none:
             withAnimation {
                 SplashView()
             }
-            
+            // Heros list Screen
         case .loaded:
             withAnimation {
                 HeroListView()
             }
-            
+            // Loader Screen
         case .loading:
             withAnimation {
                 LoaderView()
             }
-            
+            // Error Screen
         case .error(error: let errorString):
             withAnimation {
                 ErrorView(textError: errorString)
@@ -41,6 +42,6 @@ struct RootView: View {
 #Preview {
     RootView()
         .environment(AppStateVM())
-        .environment(\.locale, .init(identifier: "en"))
+        .environment(\.locale, .init(identifier: "es"))
         .preferredColorScheme(.light)
 }

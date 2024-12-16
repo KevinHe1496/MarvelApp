@@ -21,11 +21,11 @@ struct LoaderView: View {
             
             // Animación texto
             Text("Cargando...")
-                .opacity(isAnimating ? 0 : 1) // Cambia la opacidad para animar
+                .opacity(isAnimating ? 0 : 1) 
                 .animation(Animation.easeInOut(duration: 0.7).repeatForever(autoreverses: true), value: isAnimating)
         }
         .onAppear {
-            isAnimating = true // Activa la animación en bucle al aparecer la vista
+            isAnimating = true
         }
     }
 }

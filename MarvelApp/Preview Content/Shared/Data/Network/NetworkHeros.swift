@@ -39,6 +39,7 @@ final class NetworkHeros: NetworkHerosProtocol {
 
 }
 
+// MOCK
 final class NetworkHerosMock: NetworkHerosProtocol {
     func fetchHeros() async -> [HerosRes] {
         

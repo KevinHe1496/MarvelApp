@@ -31,8 +31,6 @@ struct HerosRowView: View {
                     .clipShape(RoundedRectangle(cornerRadius: 20))
                     .shadow(radius: 7, x: 7,y: 7)
                     .padding()
-                
-                
             } placeholder: {
                 ProgressView()
                     .progressViewStyle(CircularProgressViewStyle(tint: .white))
@@ -45,7 +43,6 @@ struct HerosRowView: View {
             }
             
             //Texto nombre
-            
             Text(hero.name)
                 .bold()
                 .foregroundStyle(.white)
