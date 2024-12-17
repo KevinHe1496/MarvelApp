@@ -34,7 +34,6 @@ struct RootView: View {
             withAnimation {
                 ErrorView(textError: errorString)
             }
-        
         }
     }
 }

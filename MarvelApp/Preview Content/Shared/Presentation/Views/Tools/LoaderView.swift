@@ -13,12 +13,10 @@ struct LoaderView: View {
     
     var body: some View {
         VStack {
-            
             //Progress
             ProgressView()
                 .scaleEffect(1.5)
                 .padding()
-            
             // Animación texto
             Text("Cargando...")
                 .opacity(isAnimating ? 0 : 1) 

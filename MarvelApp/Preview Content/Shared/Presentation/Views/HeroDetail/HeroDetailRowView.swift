@@ -12,7 +12,6 @@ struct HeroDetailRowView: View {
     let serie: SeriesRus
     
     var body: some View {
-    
       
             ZStack {
                 VStack() {

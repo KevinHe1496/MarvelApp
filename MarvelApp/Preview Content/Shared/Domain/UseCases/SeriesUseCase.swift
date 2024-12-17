@@ -7,10 +7,8 @@
 
 import Foundation
 
-protocol SeriesUseCaseProtocol {
-    
+protocol SeriesUseCaseProtocol {    
     var repo: SeriesRepositoryProtocol {get set}
-    
     func fetchSeries(id: Int) async -> [SeriesRus]
 }
 
@@ -24,9 +22,7 @@ final class SeriesUseCase: SeriesUseCaseProtocol {
     
     func fetchSeries(id: Int) async -> [SeriesRus] {
         return await repo.fetchSeries(id: id)
-    }
-    
-    
+    } 
 }
 
 
@@ -41,6 +37,4 @@ final class SeriesUseCaseMock: SeriesUseCaseProtocol {
     func fetchSeries(id: Int) async -> [SeriesRus] {
         return await repo.fetchSeries(id: id)
     }
-    
-    
 }

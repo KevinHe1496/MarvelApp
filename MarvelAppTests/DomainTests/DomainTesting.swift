@@ -42,7 +42,7 @@ final class DomainTesting: XCTestCase {
     
     // MARK: - Domain Series Success
     func testDomainSeriesSuccess() async {
-        let seriesUseCase = SeriesUseCase(repo: DefaultSeriesMock())
+        let seriesUseCase = SeriesUseCase(repo: DefaultSeriesRepositoryMock())
         XCTAssertNotNil(seriesUseCase)
         
         let seriesResponse = await seriesUseCase.fetchSeries(id: 1)

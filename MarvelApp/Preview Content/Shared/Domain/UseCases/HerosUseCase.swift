@@ -8,9 +8,7 @@
 import Foundation
 
 protocol HerosUseCaseProtocol {
-    
     var repo: HerosRepositoryProtocol {get set}
-    
     func fetchHeros() async -> [HerosRes]
 }
 
@@ -25,7 +23,6 @@ final class HerosUseCase: HerosUseCaseProtocol {
     func fetchHeros() async -> [HerosRes] {
         return await repo.fetchHeros()
     }
- 
 }
 
 final class HerosUseCaseMock: HerosUseCaseProtocol {
@@ -39,5 +36,4 @@ final class HerosUseCaseMock: HerosUseCaseProtocol {
     func fetchHeros() async -> [HerosRes] {
         return await repo.fetchHeros()
     }
- 
 }

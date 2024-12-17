@@ -41,7 +41,6 @@ struct HerosRowView: View {
                     .shadow(radius: 7, x: 7,y: 7)
                 
             }
-            
             //Texto nombre
             Text(hero.name)
                 .bold()
@@ -49,7 +48,6 @@ struct HerosRowView: View {
                 .padding(.top, 210)
                 .padding(.horizontal)
         } // fin Hstack
-        
     }
 }
 

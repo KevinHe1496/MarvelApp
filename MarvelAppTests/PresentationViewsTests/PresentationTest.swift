@@ -119,8 +119,6 @@ final class PresentationTest: XCTestCase {
         
         let descriptionText = try vStack.text(2).string()
         XCTAssertEqual(descriptionText, serie.description)
-        
-        
-        
+ 
     }
 }

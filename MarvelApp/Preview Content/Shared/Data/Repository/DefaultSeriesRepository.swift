@@ -21,7 +21,7 @@ final class DefaultSeriesRepository: SeriesRepositoryProtocol {
     
 }
 
-final class DefaultSeriesMock: SeriesRepositoryProtocol {
+final class DefaultSeriesRepositoryMock: SeriesRepositoryProtocol {
     
     private var network: NetworkSeriesProtocol
     

@@ -53,9 +53,7 @@ struct ErrorView: View {
                         .background(.white)
                         .clipShape(RoundedRectangle(cornerRadius: 20))
                         .shadow(radius: 7, x: 7, y: 7)
-                    
                 }
-                
             } // fin vstack
         } // fin zstack
         

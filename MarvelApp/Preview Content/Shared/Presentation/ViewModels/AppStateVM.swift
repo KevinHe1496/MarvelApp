@@ -16,9 +16,7 @@ final class AppStateVM {
     private var herosUseCase: HerosUseCaseProtocol
     
     init(herosUseCase: HerosUseCaseProtocol = HerosUseCase()) {
-        self.herosUseCase = herosUseCase
-        
-        
+        self.herosUseCase = herosUseCase 
     }
     
     @MainActor
