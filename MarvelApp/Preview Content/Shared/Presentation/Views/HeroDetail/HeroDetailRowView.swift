@@ -43,7 +43,7 @@ struct HeroDetailRowView: View {
                         .padding(.horizontal)
                         .padding(.bottom, 10)
                         .lineLimit(2)
-                    Text(serie.description ?? "No tiene descripción")
+                    Text(serie.description ?? "Descripción no disponible.")
                         .foregroundStyle(.black)
                         .lineLimit(4)
                         .padding(.horizontal)
