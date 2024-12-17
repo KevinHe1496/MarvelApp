@@ -6,7 +6,7 @@ Marvel App es una aplicación desarrollada en **SwiftUI**, diseñada para mostra
 ![MarvelApp](https://i.postimg.cc/qvHRpZfs/marvelapp.png)
 
 ## Características
-- **Grid**: organiza vistas de manera ordenada en filas y columnas.
+- **Grid**: Organiza vistas de manera ordenada en filas y columnas.
 - **API REST**: La aplicación interactúa con una API REST para obtener información sobre los personajes y sus series.
 - **Testing**: El proyecto incluye pruebas unitarias y de integración para asegurar la correcta funcionalidad de las principales características.
 - **MVVM**: Se ha utilizado el patrón de diseño MVVM para organizar el código, separando la lógica de negocio (Model), la representación de la interfaz de usuario (View) y el manejo de los datos (ViewModel).
