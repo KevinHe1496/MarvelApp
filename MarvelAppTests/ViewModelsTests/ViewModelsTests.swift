@@ -3,6 +3,7 @@ import XCTest
 
 final class ViewModelsTests: XCTestCase {
     
+    // MARK: - Hero ViewModel
     @MainActor
     func testHeroViewModel() async throws {
         let viewModel = HerosViewModel(useCaseHeros: HerosUseCaseMock())
@@ -15,6 +16,7 @@ final class ViewModelsTests: XCTestCase {
         XCTAssertEqual(viewModel.herosData.count, 3)
     }
     
+    // MARK: - Series ViewModel
     @MainActor
     func testSeriesViewModel() async throws {
         

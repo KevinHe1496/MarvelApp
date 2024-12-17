@@ -48,9 +48,10 @@ final class PresentationTest: XCTestCase {
     // MARK: - Test SplashView
     @MainActor
     func test_SplashView_InitialState() throws {
+        // Configuro el AppStateVM
         let appState = AppStateVM(herosUseCase: HerosUseCase(repo: DefaultHerosRepositoryMock()))
         XCTAssertNotNil(appState)
-
+        // Instancio la vista
         let sut = SplashView()
             .environment(appState)
 
@@ -61,6 +62,7 @@ final class PresentationTest: XCTestCase {
     // MARK: - Test ErrorView
     @MainActor
     func test_ErrorView_ShowsErrorMessage() throws {
+        // Instancio la vista
         let sut = ErrorView(textError: "Error")
 
         let zStack = try sut.inspect().implicitAnyView().zStack()
@@ -76,6 +78,7 @@ final class PresentationTest: XCTestCase {
     // MARK: - Test LoaderView
     @MainActor
     func test_LoaderView_DisplaysLoader() throws {
+        // Instancio la vista
         let sut = LoaderView()
 
         let vStack = try sut.inspect().implicitAnyView().vStack()
@@ -85,8 +88,9 @@ final class PresentationTest: XCTestCase {
     // MARK: - Test HeroDetailView
     @MainActor
     func test_HeroDetailView_DisplaysScrollView() throws {
+        // Configuro el objeto hero
         let hero = HerosRes(name: "3-D Man", id: 1011334, thumbnail: Thumbnail(path: "http://i.annihil.us/u/prod/marvel/i/mg/c/e0/535fecbbb9784", thumbnailExtension: Extension.jpg))
-
+        // Instancio la vista
         let sut = HeroDetailView(viewModel: SeriesViewModel(heroesID: hero))
 
         let scrollView = try sut.inspect().implicitAnyView().scrollView()
