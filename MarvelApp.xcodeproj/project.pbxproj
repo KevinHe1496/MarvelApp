@@ -6,6 +6,10 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		C96CB2C22D10D1A600EBC85A /* ViewInspector in Frameworks */ = {isa = PBXBuildFile; productRef = C96CB2C12D10D1A600EBC85A /* ViewInspector */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		C9AB85B02D07B0C50095BF2F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -59,6 +63,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C96CB2C22D10D1A600EBC85A /* ViewInspector in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -126,6 +131,7 @@
 			);
 			name = MarvelAppTests;
 			packageProductDependencies = (
+				C96CB2C12D10D1A600EBC85A /* ViewInspector */,
 			);
 			productName = MarvelAppTests;
 			productReference = C9AB85AF2D07B0C50095BF2F /* MarvelAppTests.xctest */;
@@ -160,6 +166,9 @@
 			);
 			mainGroup = C9AB85962D07B0C40095BF2F;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				C96CB2C02D10D1A600EBC85A /* XCRemoteSwiftPackageReference "ViewInspector" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = C9AB85A02D07B0C40095BF2F /* Products */;
 			projectDirPath = "";
@@ -464,6 +473,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		C96CB2C02D10D1A600EBC85A /* XCRemoteSwiftPackageReference "ViewInspector" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/nalexn/ViewInspector.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.10.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		C96CB2C12D10D1A600EBC85A /* ViewInspector */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C96CB2C02D10D1A600EBC85A /* XCRemoteSwiftPackageReference "ViewInspector" */;
+			productName = ViewInspector;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = C9AB85972D07B0C40095BF2F /* Project object */;
 }

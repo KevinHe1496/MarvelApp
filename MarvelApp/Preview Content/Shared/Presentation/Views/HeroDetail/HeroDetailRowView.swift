@@ -55,14 +55,9 @@ struct HeroDetailRowView: View {
                 .clipShape(RoundedRectangle(cornerRadius: 5))
                 .shadow(radius: 7, x: 7, y: 7)
                 .padding(.bottom, 50)
-                
-                
-                
-                
+          
             } // fin zstack
-            
- 
-        
+
     }
 }
 

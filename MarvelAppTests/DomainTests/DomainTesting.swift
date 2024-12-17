@@ -68,7 +68,7 @@ struct  DomainTesting {
             }
             /// Series UseCase
             @Test("Series UseCase")
-            func DomainSeriesErrorTest() async throws {
+            func DomainSeriesSuccessTest() async throws {
                 
                 let SeriesUseCase = SeriesUseCase(repo: DefaultSeriesMock())
                 #expect(SeriesUseCase != nil)

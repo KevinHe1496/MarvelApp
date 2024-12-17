@@ -21,12 +21,13 @@ final class HerosViewModel: ObservableObject {
     init(useCaseHeros: HerosUseCaseProtocol = HerosUseCase()) {
         self.useCaseHeros = useCaseHeros
         
-        Task {
+        Task(priority: .high) {
             await getHeros()
         }
     }
     
     // Filtrar Heroes
+    @MainActor
     var filteredCharacters: [HerosRes] {
         if searchText.isEmpty {
             return herosData
