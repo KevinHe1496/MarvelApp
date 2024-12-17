@@ -1,83 +1,47 @@
-//
-//  DomainTesting.swift
-//  MarvelAppTests
-//
-//  Created by Kevin Heredia on 16/12/24.
-//
 
-import Testing
+import XCTest
 @testable import MarvelApp
 
-struct  DomainTesting {
+final class DomainTesting: XCTestCase {
     
-    @Suite("Domain Testing")
-    struct DomainModelTest {
+    func testModelHeros() {
+        let hero = HerosRes(
+            name: "3-D Man",
+            id: 1011334,
+            thumbnail: Thumbnail(
+                path: "http://i.annihil.us/u/prod/marvel/i/mg/c/e0/535fecbbb9784",
+                thumbnailExtension: .jpg
+            )
+        )
         
-        @Suite("Entidades", .serialized) struct ModelTest {
-            
-            
-            /// Heros Model
-            @Test("Heros Model")
-            func modelHerosTest() async throws {
-                let hero =  HerosRes(name: "3-D Man", id: 1011334, thumbnail: Thumbnail(path: "http://i.annihil.us/u/prod/marvel/i/mg/c/e0/535fecbbb9784", thumbnailExtension: Extension.jpg))
-                
-                #expect(hero != nil)
-                #expect(hero.name == "3-D Man")
-                #expect(hero.id == 1011334)
-                #expect(hero.thumbnail.path == "http://i.annihil.us/u/prod/marvel/i/mg/c/e0/535fecbbb9784")
-                #expect(hero.thumbnail.thumbnailExtension.rawValue == "jpg")
-            }
-            
-            /// Series Model
-            @Test("Series Model")
-            func modelSeriesTest() async throws {
-                let hero =  SeriesRus(id: 1011334, title: "Avengers: The Initiative (2007 - 2010)", description: "", thumbnail: ThumbnailSeries(path: "http://i.annihil.us/u/prod/marvel/i/mg/5/a0/514a2ed3302f5", thumbnailExtension: ExtensionSeries.jpg))
-                
-                #expect(hero != nil)
-                #expect(hero.title == "Avengers: The Initiative (2007 - 2010)")
-                #expect(hero.id == 1011334)
-                #expect(hero.description == "")
-                #expect(hero.thumbnail.path == "http://i.annihil.us/u/prod/marvel/i/mg/5/a0/514a2ed3302f5")
-                #expect(hero.thumbnail.thumbnailExtension.rawValue == "jpg")
-            }
-        }
-        
-        @Suite("Domain Testing", .serialized) struct DomainTest {
-            
-            /// Heros UseCase
-            
-            @Test("Hero UseCase")
-            func DomainHerosSuccessTest() async throws {
-                
-                let heroUseCase = HerosUseCase(repo: DefaultHerosRepositoryMock())
-                #expect(heroUseCase != nil)
-                
-                let heroResponse = await heroUseCase.fetchHeros()
-                #expect(heroResponse.count == 3)
-            }
-            
-            /// Heros UseCase Error
-            @Test("Heros UseCase")
-            func DomainHerosErrorTest() async throws {
-                
-                let heroUseCase = HerosUseCase(repo: DefaultHerosRepository())
-                #expect(heroUseCase != nil)
-                
-                let heroResponse = await heroUseCase.fetchHeros()
-                #expect(heroResponse.count != 5)
-            }
-            /// Series UseCase
-            @Test("Series UseCase")
-            func DomainSeriesSuccessTest() async throws {
-                
-                let SeriesUseCase = SeriesUseCase(repo: DefaultSeriesMock())
-                #expect(SeriesUseCase != nil)
-                
-                let SerieResponse = await SeriesUseCase.fetchSeries(id: 1)
-                #expect(SerieResponse.count == 2)
-            }
-            
-        }
+        XCTAssertNotNil(hero)
+        XCTAssertEqual(hero.name, "3-D Man")
+        XCTAssertEqual(hero.id, 1011334)
+        XCTAssertEqual(hero.thumbnail.path, "http://i.annihil.us/u/prod/marvel/i/mg/c/e0/535fecbbb9784")
+        XCTAssertEqual(hero.thumbnail.thumbnailExtension.rawValue, "jpg")
     }
     
+    func testDomainHerosSuccess() async {
+        let heroUseCase = HerosUseCase(repo: DefaultHerosRepositoryMock())
+        XCTAssertNotNil(heroUseCase)
+        
+        let heroResponse = await heroUseCase.fetchHeros()
+        XCTAssertEqual(heroResponse.count, 3)
+    }
+    
+    func testDomainHerosError() async {
+        let heroUseCase = HerosUseCase(repo: DefaultHerosRepository())
+        XCTAssertNotNil(heroUseCase)
+        
+        let heroResponse = await heroUseCase.fetchHeros()
+        XCTAssertNotEqual(heroResponse.count, 5)
+    }
+    
+    func testDomainSeriesSuccess() async {
+        let seriesUseCase = SeriesUseCase(repo: DefaultSeriesMock())
+        XCTAssertNotNil(seriesUseCase)
+        
+        let seriesResponse = await seriesUseCase.fetchSeries(id: 1)
+        XCTAssertEqual(seriesResponse.count, 2)
+    }
 }

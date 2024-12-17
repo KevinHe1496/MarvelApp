@@ -1,62 +1,44 @@
-//
-//  DataTesting.swift
-//  MarvelAppTests
-//
-//  Created by Kevin Heredia on 16/12/24.
-//
 
-import Testing
-import SwiftUI
-import ViewInspector
+
+import XCTest
 @testable import MarvelApp
 
-struct DataTesting {
-
-    @Suite("Data Testing")
-    struct DataNetworkTests {
+final class DataNetworkTests: XCTestCase {
+    
+    func testDataNetworkModels() {
+        /// EndPoints
+        XCTAssertEqual(EndPoints.heros.rawValue, "/v1/public/characters")
+        XCTAssertEqual(EndPoints.series.rawValue, "/v1/public/characters/")
         
-        @Suite("Data", .serialized) struct DataTests {
-            
-            @Test("Data Network")
-            func DataNetworkModelsTests() async throws {
-                /// EndPoints
-                #expect(EndPoints.heros.rawValue  == "/v1/public/characters")
-                #expect(EndPoints.series.rawValue  == "/v1/public/characters/")
-                
-                ///HTTPMethods
-                #expect(HttpMethods.post == "POST")
-                #expect(HttpMethods.get == "GET")
-                #expect(HttpMethods.put == "PUT")
-                #expect(HttpMethods.content == "application/json")
-                
-                ///HTTPResponseCodes
-                #expect(HttpResponseCodes.CONFLICT == 409)
-                #expect(HttpResponseCodes.NOT_AUTHORIZED == 401)
-                #expect(HttpResponseCodes.ERROR == 502)
-                #expect(HttpResponseCodes.NOT_FOUND == 404)
-                #expect(HttpResponseCodes.SUCCESS == 200)
-            }
-            
-            @Test("Network Heros Mock")
-            func DataNetworkHerosMockTest() async throws {
-                let network = NetworkHerosMock()
-                #expect(network != nil)
-                
-                //get Heros
-                #expect(await network.fetchHeros().count == 3)
-            }
-            
-            @Test("Network Series Mock")
-            func DataNetworkSeriesMockTest() async throws {
-                let network = NetworkSeriesMock()
-                #expect(network != nil)
-                
-                //get Series
-                #expect(await network.fetchSeries(id: 1).count == 2)
-            }
-            
-        }
+        /// HTTPMethods
+        XCTAssertEqual(HttpMethods.post, "POST")
+        XCTAssertEqual(HttpMethods.get, "GET")
+        XCTAssertEqual(HttpMethods.put, "PUT")
+        XCTAssertEqual(HttpMethods.content, "application/json")
         
+        /// HTTPResponseCodes
+        XCTAssertEqual(HttpResponseCodes.CONFLICT, 409)
+        XCTAssertEqual(HttpResponseCodes.NOT_AUTHORIZED, 401)
+        XCTAssertEqual(HttpResponseCodes.ERROR, 502)
+        XCTAssertEqual(HttpResponseCodes.NOT_FOUND, 404)
+        XCTAssertEqual(HttpResponseCodes.SUCCESS, 200)
     }
-
+    
+    func testNetworkHerosMock() async {
+        let network = NetworkHerosMock()
+        XCTAssertNotNil(network)
+        
+        // get Heros
+        let heros = await network.fetchHeros()
+        XCTAssertEqual(heros.count, 3)
+    }
+    
+    func testNetworkSeriesMock() async {
+        let network = NetworkSeriesMock()
+        XCTAssertNotNil(network)
+        
+        // get Series
+        let series = await network.fetchSeries(id: 1)
+        XCTAssertEqual(series.count, 2)
+    }
 }
