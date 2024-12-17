@@ -42,7 +42,7 @@ final class PresentationTest: XCTestCase {
         XCTAssertEqual(zStack.count, 2)
 
         let heroName = try sut.inspect().find(text: hero.name).string()
-        XCTAssertEqual(heroName, "3-D Man")
+        XCTAssertEqual(heroName, hero.name)
     }
 
     // MARK: - Test SplashView
@@ -83,11 +83,12 @@ final class PresentationTest: XCTestCase {
 
         let vStack = try sut.inspect().implicitAnyView().vStack()
         XCTAssertEqual(vStack.count, 2)
+        
     }
 
     // MARK: - Test HeroDetailView
     @MainActor
-    func test_HeroDetailView_DisplaysScrollView() throws {
+    func test_HeroDetailView() throws {
         // Configuro el objeto hero
         let hero = HerosRes(name: "3-D Man", id: 1011334, thumbnail: Thumbnail(path: "http://i.annihil.us/u/prod/marvel/i/mg/c/e0/535fecbbb9784", thumbnailExtension: Extension.jpg))
         // Instancio la vista
@@ -95,5 +96,31 @@ final class PresentationTest: XCTestCase {
 
         let scrollView = try sut.inspect().implicitAnyView().scrollView()
         XCTAssertNotNil(scrollView)
+    }
+    
+    // MARK: - Test HeroDetailRowView
+    @MainActor
+    func test_HeroDetailRowView() throws {
+        // Configuro el objeto serie
+        let serie = SeriesRus(id: 1011334, title: "Avengers: The Initiative (2007 - 2010)", description: "", thumbnail: ThumbnailSeries(path: "http://i.annihil.us/u/prod/marvel/i/mg/5/a0/514a2ed3302f5", thumbnailExtension: ExtensionSeries.jpg))
+        
+        // Instancio la vista
+        let sut = HeroDetailRowView(serie: serie)
+        XCTAssertNotNil(sut)
+        
+        let zStack = try sut.inspect().implicitAnyView().zStack()
+        XCTAssertEqual(zStack.count, 1)
+        
+        let vStack = try zStack.vStack(0)
+        XCTAssertNotNil(vStack)
+        
+        let titleText = try vStack.text(1).string()
+        XCTAssertEqual(titleText, serie.title)
+        
+        let descriptionText = try vStack.text(2).string()
+        XCTAssertEqual(descriptionText, serie.description)
+        
+        
+        
     }
 }
