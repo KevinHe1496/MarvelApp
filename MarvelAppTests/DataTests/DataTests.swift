@@ -5,6 +5,7 @@ import XCTest
 
 final class DataNetworkTests: XCTestCase {
     
+    // MARK: - Test Data Network Models
     func testDataNetworkModels() {
         /// EndPoints
         XCTAssertEqual(EndPoints.heros.rawValue, "/v1/public/characters")
@@ -24,6 +25,7 @@ final class DataNetworkTests: XCTestCase {
         XCTAssertEqual(HttpResponseCodes.SUCCESS, 200)
     }
     
+    // MARK: - Test Network Heros Mock
     func testNetworkHerosMock() async {
         let network = NetworkHerosMock()
         XCTAssertNotNil(network)
@@ -33,6 +35,8 @@ final class DataNetworkTests: XCTestCase {
         XCTAssertEqual(heros.count, 3)
     }
     
+    
+    // MARK: - Test Network Series Mock
     func testNetworkSeriesMock() async {
         let network = NetworkSeriesMock()
         XCTAssertNotNil(network)

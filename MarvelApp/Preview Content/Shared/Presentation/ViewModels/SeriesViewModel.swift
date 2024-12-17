@@ -11,21 +11,23 @@ import Foundation
 final class SeriesViewModel {
     
     var series = [SeriesRus]()
-    
-    
+    private var heroesID: HerosRes
     
     @ObservationIgnored
     private var useCase: SeriesUseCaseProtocol
     
-    init(useCase: SeriesUseCaseProtocol = SeriesUseCase()) {
+    init(useCase: SeriesUseCaseProtocol = SeriesUseCase(), heroesID: HerosRes) {
         self.useCase = useCase
-        
+        self.heroesID = heroesID
+        Task{
+            await getSeries()
+        }
     }
     
     // Obtener Series mediante el id
     @MainActor
-    func getSeries(id: Int) async {
-        let data = await useCase.fetchSeries(id: id)
+    func getSeries() async {
+        let data = await useCase.fetchSeries(id: heroesID.id)
         self.series = data
     }
 }

@@ -23,7 +23,7 @@ struct HeroListView: View {
                 LazyVGrid(columns: columns) {
                     ForEach(viewModel.filteredCharacters) { hero in
                         NavigationLink {
-                            HeroDetailView(hero: hero)
+                            HeroDetailView(viewModel: SeriesViewModel(heroesID: hero))
                         } label: {
                             HerosRowView(hero: hero)
                         }

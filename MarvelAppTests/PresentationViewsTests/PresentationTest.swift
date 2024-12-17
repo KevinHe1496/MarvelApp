@@ -87,7 +87,7 @@ final class PresentationTest: XCTestCase {
     func test_HeroDetailView_DisplaysScrollView() throws {
         let hero = HerosRes(name: "3-D Man", id: 1011334, thumbnail: Thumbnail(path: "http://i.annihil.us/u/prod/marvel/i/mg/c/e0/535fecbbb9784", thumbnailExtension: Extension.jpg))
 
-        let sut = HeroDetailView(hero: hero)
+        let sut = HeroDetailView(viewModel: SeriesViewModel(heroesID: hero))
 
         let scrollView = try sut.inspect().implicitAnyView().scrollView()
         XCTAssertNotNil(scrollView)

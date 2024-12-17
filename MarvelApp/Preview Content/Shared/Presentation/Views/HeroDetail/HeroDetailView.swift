@@ -8,19 +8,13 @@
 import SwiftUI
 
 struct HeroDetailView: View {
-    
-    @State var hero: HerosRes
+
     @State var viewModel: SeriesViewModel
     
     let columns = Array(repeating: GridItem(.flexible(minimum: 20)), count: 1)
     
-    init(viewModel: SeriesViewModel = SeriesViewModel(), hero: HerosRes) {
+    init(viewModel: SeriesViewModel) {
         self.viewModel = viewModel
-        self.hero = hero
-        
-        Task(priority: .high) {
-            await viewModel.getSeries(id: hero.id)
-        }
     }
     
     var body: some View {
@@ -37,5 +31,7 @@ struct HeroDetailView: View {
 }
 
 #Preview {
-    HeroDetailView(hero: HerosRes(name: "Linterna Verde", id: 1011334, thumbnail: Thumbnail(path: "http://i.annihil.us/u/prod/marvel/i/mg/c/e0/535fecbbb9784", thumbnailExtension: Extension.jpg)))
+    
+    let hero = HerosRes(name: "Linterna Verde", id: 1011334, thumbnail: Thumbnail(path: "http://i.annihil.us/u/prod/marvel/i/mg/c/e0/535fecbbb9784", thumbnailExtension: Extension.jpg))
+    HeroDetailView(viewModel: SeriesViewModel(heroesID: hero))
 }

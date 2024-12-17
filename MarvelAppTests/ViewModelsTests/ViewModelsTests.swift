@@ -7,13 +7,27 @@ final class ViewModelsTests: XCTestCase {
     func testHeroViewModel() async throws {
         let viewModel = HerosViewModel(useCaseHeros: HerosUseCaseMock())
         XCTAssertNotNil(viewModel)
-        XCTAssertEqual(viewModel.herosData.count, 0)
+        let expectation = self.expectation(description: "Get Heros")
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            expectation.fulfill()
+        }
+        await fulfillment(of: [expectation], timeout: 5)
+        XCTAssertEqual(viewModel.herosData.count, 3)
     }
     
     @MainActor
     func testSeriesViewModel() async throws {
-        let viewModel = SeriesViewModel(useCase: SeriesUseCaseMock())
+        
+        let hero = HerosRes(name: "Linterna Verde", id: 1, thumbnail: Thumbnail(path: "http://i.annihil.us/u/prod/marvel/i/mg/c/e0/535fecbbb9784", thumbnailExtension: Extension.jpg))
+        
+        let viewModel = SeriesViewModel(useCase: SeriesUseCaseMock(), heroesID: hero)
         XCTAssertNotNil(viewModel)
-        XCTAssertEqual(viewModel.series.count, 0)
+        let expectation = self.expectation(description: "Get Series")
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            expectation.fulfill()
+        }
+        await fulfillment(of: [expectation], timeout: 5)
+        XCTAssertEqual(viewModel.series.count, 2)
     }
 }
