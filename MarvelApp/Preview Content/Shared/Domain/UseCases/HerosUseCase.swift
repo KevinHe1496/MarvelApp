@@ -24,7 +24,7 @@ final class HerosUseCase: HerosUseCaseProtocol {
         return await repo.fetchHeros()
     }
 }
-
+// MOCK
 final class HerosUseCaseMock: HerosUseCaseProtocol {
     
     var repo: any HerosRepositoryProtocol

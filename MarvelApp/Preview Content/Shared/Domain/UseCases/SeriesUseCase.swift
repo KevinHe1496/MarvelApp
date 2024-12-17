@@ -25,7 +25,7 @@ final class SeriesUseCase: SeriesUseCaseProtocol {
     } 
 }
 
-
+// MOCK
 final class SeriesUseCaseMock: SeriesUseCaseProtocol {
     
     var repo: SeriesRepositoryProtocol
