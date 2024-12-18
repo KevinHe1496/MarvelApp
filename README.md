@@ -3,7 +3,7 @@
 
 Marvel App es una aplicación desarrollada en **SwiftUI**, diseñada para mostrar los personajes de Marvel junto con las series en las que han actuado. El proyecto utiliza **Grid** para presentar la información de manera organizada. Además, integra una **API REST** para obtener los datos de los personajes e incluye **Unit Testing** para garantizar la calidad del código.
 
-![MarvelApp](https://i.postimg.cc/0jqWkwv2/Marvel-App-Final.png)
+![MarvelApp](https://i.postimg.cc/N01RLhFB/finishmarvelapp.png)
 
 ## Características
 - **Grid**: Organiza vistas de manera ordenada en filas y columnas.
