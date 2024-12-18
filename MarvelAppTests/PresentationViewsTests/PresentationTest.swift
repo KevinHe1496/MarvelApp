@@ -21,7 +21,7 @@ final class PresentationTest: XCTestCase {
 
         // Instancio la vista
         let sut = HeroListView()
-            .environment(appState)
+            .environment(appState) 
 
         // Inspecciono la vista
         let navigationStack = try sut.inspect().implicitAnyView().navigationStack()
