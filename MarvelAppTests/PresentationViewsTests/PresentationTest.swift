@@ -25,7 +25,14 @@ final class PresentationTest: XCTestCase {
 
         // Inspecciono la vista
         let navigationStack = try sut.inspect().implicitAnyView().navigationStack()
-        XCTAssertEqual(navigationStack.count, 1)
+        XCTAssertEqual(navigationStack.count, 2)
+        
+        let scrollView = try navigationStack.scrollView(1)
+        XCTAssertNotNil(scrollView)
+        
+        let lazyGrid = try scrollView.lazyVGrid()
+        XCTAssertEqual(lazyGrid.count, 1)
+        
     }
 
     // MARK: - Test HerosRowView
@@ -40,6 +47,9 @@ final class PresentationTest: XCTestCase {
         // Inspecciono la vista
         let zStack = try sut.inspect().implicitAnyView().zStack()
         XCTAssertEqual(zStack.count, 2)
+        
+        let imageHero = try zStack.asyncImage(0)
+        XCTAssertNotNil(imageHero)
 
         let heroName = try sut.inspect().find(text: hero.name).string()
         XCTAssertEqual(heroName, hero.name)
@@ -57,6 +67,9 @@ final class PresentationTest: XCTestCase {
 
         let zStack = try sut.inspect().implicitAnyView().zStack()
         XCTAssertEqual(zStack.count, 2)
+        
+        let imageSplash = try zStack.image(0)
+        XCTAssertNotNil(imageSplash)
     }
 
     // MARK: - Test ErrorView
@@ -70,6 +83,9 @@ final class PresentationTest: XCTestCase {
 
         let vStack = try zStack.vStack(1)
         XCTAssertNotNil(vStack)
+        
+        let imageError = try vStack.image(0)
+        XCTAssertNotNil(imageError)
 
         let opsText = try vStack.text(1).string()
         XCTAssertEqual(opsText, "OOOOPS!")
@@ -84,6 +100,9 @@ final class PresentationTest: XCTestCase {
         let vStack = try sut.inspect().implicitAnyView().vStack()
         XCTAssertEqual(vStack.count, 2)
         
+        let progress = try vStack.progressView(0)
+        XCTAssertNotNil(progress)
+        
     }
 
     // MARK: - Test HeroDetailView
@@ -96,6 +115,9 @@ final class PresentationTest: XCTestCase {
 
         let scrollView = try sut.inspect().implicitAnyView().scrollView()
         XCTAssertNotNil(scrollView)
+        
+        let lazyGrid = try scrollView.lazyVGrid()
+        XCTAssertEqual(lazyGrid.count, 1)
     }
     
     // MARK: - Test HeroDetailRowView
@@ -113,6 +135,9 @@ final class PresentationTest: XCTestCase {
         
         let vStack = try zStack.vStack(0)
         XCTAssertNotNil(vStack)
+        
+        let imageHeroRow = try vStack.asyncImage(0)
+        XCTAssertNotNil(imageHeroRow)
         
         let titleText = try vStack.text(1).string()
         XCTAssertEqual(titleText, serie.title)

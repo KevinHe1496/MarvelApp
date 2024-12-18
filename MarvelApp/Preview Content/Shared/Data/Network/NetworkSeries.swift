@@ -19,7 +19,7 @@ final class NetworkSeries: NetworkSeriesProtocol {
         
         var modelReturn = [SeriesRus]()
         
-        let urlString = "\(ConstantsApp.CONS_API_URL)\(EndPoints.series.rawValue)\(id)/series\(ConstantsApp.CONS_HASH)\(ConstantsApp.CONS_TS)\(ConstantsApp.CONS_PUBLIC_KEY)"
+        let urlString = "\(ConstantsApp.CONS_API_URL)\(EndPoints.series.rawValue)\(id)/series?hash=\(ConstantsApp.CONS_HASH)&ts=\(ConstantsApp.CONS_TS)&apikey=\(ConstantsApp.CONS_PUBLIC_KEY)"
         
         var request = URLRequest(url: URL(string: urlString)!)
         request.httpMethod = HttpMethods.get

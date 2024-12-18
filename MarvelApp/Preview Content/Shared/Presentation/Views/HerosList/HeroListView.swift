@@ -38,7 +38,6 @@ struct HeroListView: View {
                 .padding(.horizontal)
             }
             .navigationTitle("Lista de Heroes")
-            
             .searchable(text: $viewModel.searchText)
         }
     }

@@ -20,7 +20,7 @@ final class DefaultHerosRepository: HerosRepositoryProtocol {
     }
 }
 
-
+// MOCK
 final class DefaultHerosRepositoryMock: HerosRepositoryProtocol {
     
     private var network: NetworkHerosProtocol

@@ -7,6 +7,7 @@
 
 import Foundation
 
+/// Modelo
 struct HerosModel: Codable {
     let data: HeroResult
 }

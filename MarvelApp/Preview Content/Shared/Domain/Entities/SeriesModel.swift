@@ -7,6 +7,7 @@
 
 import Foundation
 
+/// Modelo
 struct SeriesModel: Codable {
     let data: SeriesResult
 }

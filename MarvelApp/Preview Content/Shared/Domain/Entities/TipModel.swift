@@ -8,6 +8,7 @@
 import Foundation
 import TipKit
 
+/// Tip
 struct TipModel: Tip {
     
     var title: Text{

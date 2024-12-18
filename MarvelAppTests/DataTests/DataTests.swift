@@ -28,9 +28,9 @@ final class DataNetworkTests: XCTestCase {
     // MARK: - Test ConstantsApp
     func testConstantsApp() {
         XCTAssertEqual(ConstantsApp.CONS_API_URL, "http://gateway.marvel.com")
-        XCTAssertEqual(ConstantsApp.CONS_HASH, "?hash=e5645a37500147be54b7fcdf27fced2d")
-        XCTAssertEqual(ConstantsApp.CONS_TS, "&ts=1")
-        XCTAssertEqual(ConstantsApp.CONS_PUBLIC_KEY, "&apikey=2c723f9607bbe83de1a1fa92c52ea04f")
+        XCTAssertEqual(ConstantsApp.CONS_HASH, "e5645a37500147be54b7fcdf27fced2d")
+        XCTAssertEqual(ConstantsApp.CONS_TS, "1")
+        XCTAssertEqual(ConstantsApp.CONS_PUBLIC_KEY, "2c723f9607bbe83de1a1fa92c52ea04f")
     }
     
     // MARK: - Test Network Heros Mock

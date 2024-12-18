@@ -12,11 +12,11 @@ public struct ConstantsApp {
     public static let CONS_API_URL = "http://gateway.marvel.com"
     
     // Hash
-    public static let CONS_HASH = "?hash=e5645a37500147be54b7fcdf27fced2d"
+    public static let CONS_HASH = "e5645a37500147be54b7fcdf27fced2d"
     
     // Ts
-    public static let CONS_TS = "&ts=1"
+    public static let CONS_TS = "1"
     
     //Public Key
-    public static let CONS_PUBLIC_KEY = "&apikey=2c723f9607bbe83de1a1fa92c52ea04f"
+    public static let CONS_PUBLIC_KEY = "2c723f9607bbe83de1a1fa92c52ea04f"
 }
