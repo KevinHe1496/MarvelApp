@@ -13,6 +13,7 @@ Marvel App es una aplicación desarrollada en **SwiftUI**, diseñada para mostra
 - **Combine**: Implementación de Combine para manejar la reactividad de los datos.
 - **Async/Await**: Uso de async/await para realizar solicitudes a la API de manera eficiente.
 - **Swift Packages**: Uso de **ViewInspector** para testear nuestras vistas y sub-vistas.
+- **TipKit**: Implementación de TipKit para proporcionar consejos útiles al usuario de manera dinámica dentro de la aplicación.
 
 ## Tecnologías
 - SwiftUI
@@ -24,6 +25,7 @@ Marvel App es una aplicación desarrollada en **SwiftUI**, diseñada para mostra
 - Combine
 - Async/Await
 - Swift Packages
+- TipKit
 
 ## Instalación
 
