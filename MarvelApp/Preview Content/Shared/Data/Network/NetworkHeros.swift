@@ -7,12 +7,12 @@
 
 import Foundation
 
-//Protocol
+/// Protocol
 protocol NetworkHerosProtocol {
     func fetchHeros() async -> [HerosRes]
 }
 
-//Implementamos la clase
+/// Network Heros
 final class NetworkHeros: NetworkHerosProtocol {
     func fetchHeros() async -> [HerosRes] {
         
@@ -39,7 +39,7 @@ final class NetworkHeros: NetworkHerosProtocol {
 
 }
 
-// MOCK
+/// MOCK
 final class NetworkHerosMock: NetworkHerosProtocol {
     func fetchHeros() async -> [HerosRes] {
         

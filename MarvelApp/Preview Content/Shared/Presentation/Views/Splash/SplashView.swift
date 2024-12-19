@@ -13,6 +13,7 @@ struct SplashView: View {
     
     var body: some View {
         ZStack{
+            // Imagen
             Image(.splashBackground)
                 .resizable()
                 .ignoresSafeArea()

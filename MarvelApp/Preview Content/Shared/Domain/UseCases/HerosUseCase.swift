@@ -7,11 +7,13 @@
 
 import Foundation
 
+///Protocolo
 protocol HerosUseCaseProtocol {
     var repo: HerosRepositoryProtocol {get set}
     func fetchHeros() async -> [HerosRes]
 }
 
+/// Heros UseCase
 final class HerosUseCase: HerosUseCaseProtocol {
     
     var repo: any HerosRepositoryProtocol

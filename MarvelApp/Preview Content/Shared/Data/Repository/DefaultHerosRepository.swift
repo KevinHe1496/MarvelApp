@@ -7,6 +7,7 @@
 
 import Foundation
 
+///Default Heros Repository
 final class DefaultHerosRepository: HerosRepositoryProtocol {
     
     private var network: NetworkHerosProtocol
@@ -20,7 +21,7 @@ final class DefaultHerosRepository: HerosRepositoryProtocol {
     }
 }
 
-// MOCK
+/// MOCK
 final class DefaultHerosRepositoryMock: HerosRepositoryProtocol {
     
     private var network: NetworkHerosProtocol

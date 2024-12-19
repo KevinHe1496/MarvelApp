@@ -7,6 +7,7 @@
 
 import Foundation
 
+/// Repository Protocol
 protocol HerosRepositoryProtocol {
     func fetchHeros() async -> [HerosRes]
 }

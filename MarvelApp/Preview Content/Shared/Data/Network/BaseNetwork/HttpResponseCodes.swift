@@ -7,7 +7,7 @@
 
 import Foundation
 
-///Server response codes
+/// Server response codes
 struct HttpResponseCodes {
     static let SUCCESS = 200
     static let NOT_AUTHORIZED = 401

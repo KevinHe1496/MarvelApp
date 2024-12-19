@@ -7,6 +7,7 @@
 
 import Foundation
 
+///Default Series Repository
 final class DefaultSeriesRepository: SeriesRepositoryProtocol {
     
     private var network: NetworkSeriesProtocol
@@ -21,7 +22,7 @@ final class DefaultSeriesRepository: SeriesRepositoryProtocol {
     
 }
 
-// MOCK
+/// MOCK
 final class DefaultSeriesRepositoryMock: SeriesRepositoryProtocol {
     
     private var network: NetworkSeriesProtocol

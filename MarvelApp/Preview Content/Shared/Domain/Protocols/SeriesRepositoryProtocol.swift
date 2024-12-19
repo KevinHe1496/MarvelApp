@@ -7,6 +7,7 @@
 
 import Foundation
 
+/// Repository Protocol
 protocol SeriesRepositoryProtocol {
     func fetchSeries(id: Int) async -> [SeriesRus]
 }

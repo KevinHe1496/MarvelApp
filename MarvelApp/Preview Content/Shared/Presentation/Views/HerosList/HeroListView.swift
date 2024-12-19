@@ -21,6 +21,7 @@ struct HeroListView: View {
     
     var body: some View {
         NavigationStack {
+            // Tip
             withAnimation {
                 TipView(tip, arrowEdge: .top)
                     .padding(.horizontal)

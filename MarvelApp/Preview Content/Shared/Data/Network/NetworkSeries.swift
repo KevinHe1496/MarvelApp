@@ -8,11 +8,12 @@
 import Foundation
 
 
-//Protocol
+/// Protocol
 protocol NetworkSeriesProtocol {
     func fetchSeries(id: Int) async -> [SeriesRus]
 }
 
+/// Network Series
 final class NetworkSeries: NetworkSeriesProtocol {
     
     func fetchSeries(id: Int) async -> [SeriesRus] {
@@ -42,7 +43,7 @@ final class NetworkSeries: NetworkSeriesProtocol {
 }
 
 
-// MOCK
+/// MOCK
 final class NetworkSeriesMock: NetworkSeriesProtocol {
     func fetchSeries(id: Int) async -> [SeriesRus] {
         
