@@ -33,6 +33,16 @@ final class DataNetworkTests: XCTestCase {
         XCTAssertEqual(ConstantsApp.CONS_PUBLIC_KEY, "2c723f9607bbe83de1a1fa92c52ea04f")
     }
     
+    // MARK: - Test Network Heros
+    func testNetworkHeros() async {
+        let network = NetworkHeros()
+        XCTAssertNotNil(network)
+        
+        // get Heros
+        let heros = await network.fetchHeros()
+        XCTAssertEqual(heros.count, 20)
+    }
+    
     // MARK: - Test Network Heros Mock
     func testNetworkHerosMock() async {
         let network = NetworkHerosMock()
@@ -43,6 +53,15 @@ final class DataNetworkTests: XCTestCase {
         XCTAssertEqual(heros.count, 3)
     }
     
+    // MARK: - Test Network Series
+    func testNetworkSeries() async {
+        let network = NetworkSeries()
+        XCTAssertNotNil(network)
+        
+        // get Series
+        let series = await network.fetchSeries(id: 1011334)
+        XCTAssertEqual(series.count, 3)
+    }
     
     // MARK: - Test Network Series Mock
     func testNetworkSeriesMock() async {

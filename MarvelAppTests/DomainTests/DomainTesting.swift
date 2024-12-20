@@ -31,14 +31,6 @@ final class DomainTesting: XCTestCase {
         XCTAssertEqual(heroResponse.count, 3)
     }
     
-    // MARK: - Domain Heros Error
-    func testDomainHerosError() async {
-        let heroUseCase = HerosUseCase(repo: DefaultHerosRepository())
-        XCTAssertNotNil(heroUseCase)
-        
-        let heroResponse = await heroUseCase.fetchHeros()
-        XCTAssertNotEqual(heroResponse.count, 5)
-    }
     
     // MARK: - Domain Series Success
     func testDomainSeriesSuccess() async {
