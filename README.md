@@ -38,9 +38,13 @@ Marvel App es una aplicación desarrollada en **SwiftUI**, diseñada para mostra
 
 ## Uso
 
-## Uso
+1. **Listado de personajes:**  
+   Al iniciar la aplicación, podrás ver una lista de personajes de **Marvel**.  
 
-1. **Configuración inicial:**  
+2. **Información de personajes:**  
+   Selecciona un personaje para ver información sobre las series en las que ha participado.  
+
+3. **Configuración**  
    - Si al iniciar la aplicación no aparece ningún héroe en el listado, asegúrate de configurar los parámetros `hash`, `ts` y `apikey` en el archivo **NetworkHeroes.swift**.  
    - Si al hacer tap en un héroe no aparece información sobre las series en las que participó, también debes configurar estos parámetros en el archivo **NetworkSeries.swift**.  
    - **Nota:** Los valores de `hash`, `ts` y `apikey` se encuentran en el archivo **ConstantsApp.swift** del proyecto.  
@@ -54,14 +58,6 @@ Marvel App es una aplicación desarrollada en **SwiftUI**, diseñada para mostra
      ```swift
      let urlString = "\(ConstantsApp.CONS_API_URL)\(EndPoints.series.rawValue)\(id)/series?hash=\(ConstantsApp.CONS_HASH)&ts=\(ConstantsApp.CONS_TS)&apikey=\(ConstantsApp.CONS_PUBLIC_KEY)"
      ```  
-
-2. **Listado de personajes:**  
-   Al iniciar la aplicación, podrás ver una lista de personajes de **Marvel**.  
-
-3. **Información de personajes:**  
-   Selecciona un personaje para ver información sobre las series en las que ha participado.  
-
-
 
 ## Pruebas
 
